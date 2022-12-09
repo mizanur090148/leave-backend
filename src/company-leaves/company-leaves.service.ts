@@ -15,12 +15,17 @@ export class CompanyLeavesService {
     private readonly model: Model<CompanyLeaveDocument>,
   ) {}
 
-  async create(createCompanyLeaveDto: CreateCompanyLeaveDto) {
-    return `This action returns all companyLeaves`;
-  }
-
   async findAll() {
     return await this.model.find().exec();
+  }
+
+  async create(
+    createCompanyLeaveDto: CreateCompanyLeaveDto,
+  ): Promise<CompanyLeave> {
+    return await new this.model({
+      ...createCompanyLeaveDto,
+      createdAt: new Date(),
+    }).save();
   }
 
   findOne(id: number) {

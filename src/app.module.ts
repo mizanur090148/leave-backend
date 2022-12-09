@@ -12,6 +12,7 @@ import { AuthModule } from 'src/auth/auth.module';
 import { LeaveTypesModule } from './leave-types/leave-types.module';
 import { UnitLeavesModule } from './unit-leaves/unit-leaves.module';
 import { CompanyLeavesModule } from './company-leaves/company-leaves.module';
+import { CompanyModule } from './company/company.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { CompanyLeavesModule } from './company-leaves/company-leaves.module';
     LeaveTypesModule,
     UnitLeavesModule,
     CompanyLeavesModule,
+    CompanyModule,
   ],
   controllers: [AppController, AuthController],
   providers: [AppService, AuthService],
